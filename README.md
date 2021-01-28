@@ -1,16 +1,13 @@
-# disenos
+# Diseños en Flutter
 
-A new Flutter project.
+Un pequeño proyecto en donde intentare comprender un poco más acerca de los diseños en Flutter, utilizando columns, rows, stacks, containers, blur y más. 
 
-## Getting Started
+## Iniciate en Flutter!
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
+Aqui te dejo algunos links de proyectos en Flutter. Son de los propios desarrolladores :3
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Para ayuda o más información, siempre puedes visitar la hermosísima documentación de Flutter, podras encontrar desde tutoriales, lista de widgets, acerca de, etc y además es gratis:
+
+[Documentacion Online](https://flutter.dev/docs)

@@ -7,17 +7,19 @@ class BotonesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
-      children: [
-        _fondoApp(),
-        SingleChildScrollView(
-          child: Column(
-            children: [
-              _titulos(),
-            ],
-          ),
+          children: [
+            _fondoApp(),
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  _titulos(),
+                  _botonesRedondeados(),
+                ],
+              ),
+            ),
+          ],
         ),
-      ],
-    ));
+        bottomNavigationBar: _bottomNavigationBar(context));
   }
 
   Widget _fondoApp() {
@@ -61,12 +63,110 @@ class BotonesPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Classify Transaction', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold),),
-            SizedBox(height: 10.0,),
-            Text('Classify this transaction into a particular category', style: TextStyle(color: Colors.white, fontSize: 30.0)),
+            Text(
+              'Classify Transaction',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text('Classify this transaction into a particular category',
+                style: TextStyle(color: Colors.white, fontSize: 20.0)),
           ],
         ),
       ),
     );
   }
+
+  //Widget personalizado del bottombarnavigation con el uso del tema del sistema
+  Widget _bottomNavigationBar(BuildContext context) {
+    return Theme(
+      data: Theme.of(context).copyWith(
+          canvasColor: Color.fromRGBO(55, 57, 84, 1.0),
+          primaryColor: Colors.pinkAccent,
+          textTheme: Theme.of(context).textTheme.copyWith(
+              caption: TextStyle(color: Color.fromRGBO(116, 117, 152, 1.0)))),
+      child: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.calendar_today,
+              size: 30.0,
+            ),
+            title: Container(),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.bubble_chart,
+              size: 30.0,
+            ),
+            title: Container(),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.supervised_user_circle,
+              size: 30.0,
+            ),
+            title: Container(),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _botonesRedondeados(){
+    return Table(
+      children: [
+        TableRow(
+          children: [
+            _crearBotonRedondeado(),
+            _crearBotonRedondeado(),
+          ],
+        ),
+        TableRow(
+          children: [
+            _crearBotonRedondeado(),
+            _crearBotonRedondeado(),
+          ],
+        ),
+        TableRow(
+          children: [
+            _crearBotonRedondeado(),
+            _crearBotonRedondeado(),
+          ],
+        )
+      ],
+    );
+
+
+
+  }
+
+  Widget _crearBotonRedondeado(){
+    return Container(
+      height: 180.0,
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color:  Color.fromRGBO(62, 66, 107, 0.7),
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          SizedBox(height: 5.0,),
+          CircleAvatar(
+            radius: 35.0,
+            backgroundColor: Colors.pinkAccent,
+            child: Icon(Icons.swap_calls, color: Colors.white, size: 30.0,),
+          ),
+          Text('Cosa', style: TextStyle(color: Colors.pinkAccent),),
+          SizedBox(height: 5.0,),
+        ],
+      ),
+    );
+  }
+
 }

@@ -58,25 +58,30 @@ class BotonesPage extends StatelessWidget {
   }
 
   Widget _titulos() {
-    return SafeArea(
-      child: Container(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Classify Transaction',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.bold),
+    return ClipRect(
+      child: SafeArea(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+          child: Container(
+            padding: EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Classify Transaction',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Text('Classify this transaction into a particular category',
+                    style: TextStyle(color: Colors.white, fontSize: 20.0)),
+              ],
             ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text('Classify this transaction into a particular category',
-                style: TextStyle(color: Colors.white, fontSize: 20.0)),
-          ],
+          ),
         ),
       ),
     );
@@ -124,26 +129,54 @@ class BotonesPage extends StatelessWidget {
         TableRow(
           children: [
             _crearBotonRedondeado(Colors.blue, Icons.border_all, 'General'),
-            _crearBotonRedondeado(Colors.purpleAccent, Icons.directions_bus, 'Direcciones'),
+            _crearBotonRedondeado(
+                Colors.purpleAccent, Icons.directions_bus, 'Direcciones'),
           ],
         ),
         TableRow(
           children: [
             _crearBotonRedondeado(Colors.redAccent, Icons.shop, 'Shop'),
-            _crearBotonRedondeado(Colors.pinkAccent, Icons.file_copy, 'Archivos'),
+            _crearBotonRedondeado(
+                Colors.pinkAccent, Icons.file_copy, 'Archivos'),
           ],
         ),
         TableRow(
           children: [
-            _crearBotonRedondeado(Colors.blue, Icons.play_circle_fill, 'Videos'),
-            _crearBotonRedondeado(Colors.purpleAccent, Icons.music_note_sharp, 'Musica'),
+            _crearBotonRedondeado(
+                Colors.blue, Icons.play_circle_fill, 'Videos'),
+            _crearBotonRedondeado(
+                Colors.purpleAccent, Icons.music_note_sharp, 'Musica'),
           ],
-        )
+        ),
+        TableRow(
+          children: [
+            _crearBotonRedondeado(
+                Colors.blue, Icons.play_circle_fill, 'Videos'),
+            _crearBotonRedondeado(
+                Colors.purpleAccent, Icons.music_note_sharp, 'Musica'),
+          ],
+        ),
+        TableRow(
+          children: [
+            _crearBotonRedondeado(
+                Colors.blue, Icons.play_circle_fill, 'Videos'),
+            _crearBotonRedondeado(
+                Colors.purpleAccent, Icons.music_note_sharp, 'Musica'),
+          ],
+        ),
+        TableRow(
+          children: [
+            _crearBotonRedondeado(
+                Colors.blue, Icons.play_circle_fill, 'Videos'),
+            _crearBotonRedondeado(
+                Colors.purpleAccent, Icons.music_note_sharp, 'Musica'),
+          ],
+        ),
       ],
     );
   }
 
-  Widget _crearBotonRedondeado(Color color, IconData icon, String texto ) {
+  Widget _crearBotonRedondeado(Color color, IconData icon, String texto) {
     return ClipRect(
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
